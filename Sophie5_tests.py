@@ -1,5 +1,3 @@
-kegg_glycolysis_list = ['mmu:100042025', 'mmu:103988', 'mmu:106557', 'mmu:110695']
-
 kegg_uniprot_raw = 'mmu:100666\tup:D2KHZ9\nmmu:100334\tup:P16858\n'
 
 # one element looks like 'mmu:100666\tup:D2KHZ9'
