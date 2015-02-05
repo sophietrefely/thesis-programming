@@ -1,15 +1,3 @@
-## This solution worked for simple exx data:
-##kegg_uniprot_raw = 'mmu:100666\tup:D2KHZ9\nmmu:100334\tup:P16858\n'
-### entries will look like [['mmu:100666', 'D2KHZ9'], ['mmu:100334', 'P16858']]
-##entries = []
-##for pair in kegg_uniprot_pairs:
-##    entry = pair.split('\tup:')
-##    entries.append(entry)
-##print(entries)
-###solution looks like [['mmu:100666', 'D2KHZ9'], ['mmu:100334', 'P16858']]
-
-
-
 #better example data/list:
 kegg_uniprot_raw = [b'mmu:100042025\tup:D2KHZ9\nmmu:100042025\tup:P16858\n', b'mmu:103988\tup:P52792\nmmu:103988\tup:Q5SVI5\nmmu:103988\tup:Q5SVI6\n', b'mmu:106557\tup:Q8BVP2\n', b'mmu:110695\tup:Q9DBF1\n', b'mmu:11522\tup:P00329\nmmu:11522\tup:Q3UKA4\n', b'mmu:11529\tup:Q64437\nmmu:11529\tup:Q9D748\n', b'mmu:11532\tup:P28474\nmmu:11532\tup:Q6P5I3\n', b'mmu:11669\tup:P47738\nmmu:11669\tup:Q544B1\n', b'mmu:11670\tup:P47739\nmmu:11670\tup:Q3UNF5\n', b'mmu:11671\tup:B1AV77\nmmu:11671\tup:P47740\n', b'mmu:11674\tup:A6ZI44\nmmu:11674\tup:P05064\nmmu:11674\tup:Q5FWB7\n']
 
@@ -33,27 +21,30 @@ print(kegg_uniprot_pairs)
 
 # make a new list with the pairs
 
-##go through fileds[] one by one - need to turn this into a loop
-pairs_list_0 = []
+pairs_list = []
 for line in kegg_uniprot_pairs:
-    entry = line[0]
-    pairs_list_0.append(entry)
-print('pairs_list_0:')
-print(pairs_list_0)
-# output was sucessful: ['mmu:100042025\tup:D2KHZ9', 'mmu:103988\tup:P52792', 'mmu:106557\tup:Q8BVP2', 'mmu:110695\tup:Q9DBF1', 'mmu:11522\tup:P00329', 'mmu:11529\tup:Q64437', 'mmu:11532\tup:P28474', 'mmu:11669\tup:P47738', 'mmu:11670\tup:P47739', 'mmu:11671\tup:B1AV77', 'mmu:11674\tup:A6ZI44']
+    for pair in line:
+        pairs_list.append(pair)
 
-pairs_list_1 = []
-for line in kegg_uniprot_pairs:
-    entry = line[1]
-    pairs_list_1.append(entry)
-print('pairs_list_1:')
-print(pairs_list_1)
+print(pairs_list)
 
-n = int(x)        
-pairs_list_n = []
-for line in kegg_uniprot_pairs:
-    if n <= 3:
-        entry = line[n]
-        pairs_list_1.append(entry)
-print('pairs_list_1:')
-print(pairs_list_1)
+## output: ['mmu:100042025\tup:D2KHZ9', 'mmu:100042025\tup:P16858', 'mmu:103988\tup:P52792', 'mmu:103988\tup:Q5SVI5', 'mmu:103988\tup:Q5SVI6', 'mmu:106557\tup:Q8BVP2', 'mmu:110695\tup:Q9DBF1', 'mmu:11522\tup:P00329', 'mmu:11522\tup:Q3UKA4', 'mmu:11529\tup:Q64437', 'mmu:11529\tup:Q9D748', 'mmu:11532\tup:P28474', 'mmu:11532\tup:Q6P5I3', 'mmu:11669\tup:P47738', 'mmu:11669\tup:Q544B1', 'mmu:11670\tup:P47739', 'mmu:11670\tup:Q3UNF5', 'mmu:11671\tup:B1AV77', 'mmu:11671\tup:P47740', 'mmu:11674\tup:A6ZI44', 'mmu:11674\tup:P05064', 'mmu:11674\tup:Q5FWB7']
+
+# split kegg ID and uniprot ID
+unpair_list = []
+for pair in pairs_list:
+    unpair = pair.split('\tup:')
+    unpair_list.append(unpair)
+print(unpair_list)
+
+## output: [['mmu:100042025', 'D2KHZ9'], ['mmu:100042025', 'P16858'], ['mmu:103988', 'P52792'], ['mmu:103988', 'Q5SVI5'], ['mmu:103988', 'Q5SVI6'], ['mmu:106557', 'Q8BVP2'], ['mmu:110695', 'Q9DBF1'], ['mmu:11522', 'P00329'], ['mmu:11522', 'Q3UKA4'], ['mmu:11529', 'Q64437'], ['mmu:11529', 'Q9D748'], ['mmu:11532', 'P28474'], ['mmu:11532', 'Q6P5I3'], ['mmu:11669', 'P47738'], ['mmu:11669', 'Q544B1'], ['mmu:11670', 'P47739'], ['mmu:11670', 'Q3UNF5'], ['mmu:11671', 'B1AV77'], ['mmu:11671', 'P47740'], ['mmu:11674', 'A6ZI44'], ['mmu:11674', 'P05064'], ['mmu:11674', 'Q5FWB7']]
+
+#Extract uniprot IDs into new list
+uniprot_list = []
+for item in unpair_list:
+    uniprot = item[1]
+    uniprot_list.append(uniprot)
+print(uniprot_list)
+    
+
+
