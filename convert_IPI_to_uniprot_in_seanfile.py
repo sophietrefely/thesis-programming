@@ -30,7 +30,6 @@ for line in conversion_david:
     uniprot = split_line[1]
     conversion_dict[ipi] = uniprot
 
-
 # Each entry in sean_list looks like
 # [<gene_name>, <ipi>, <some_other_data>, ... <lots of numbers>]
 # replace IPIs in Sean_list with matching uniprot from conversion_list so it will look like:
@@ -46,7 +45,9 @@ for item in sean_list:
         item[1] = uniprot
         item_to_write = '\t'.join(item) + '\n'    #unsplits the list so that the file output will look like: <gene_name>/t<uniprot>/t<some_other_data>/t ... <lots of numbers> instead of a list with [] as above.  
         sean_list_converted.write(item_to_write)
-    else:
-        print(sean_ipi) #this gives the ipis that were not assigned to uniprot accession in first run through DAVID.
-        # copied and pasted these missing values into new file 'unconverted_ipis.txt'
-sean_list_converted.close() #must close file after writing  
+##    else:
+##        print(sean_ipi) #this gives the ipis that were not assigned to uniprot accession in first run through DAVID.
+sean_list_converted.close() #must close file after writing
+
+
+
