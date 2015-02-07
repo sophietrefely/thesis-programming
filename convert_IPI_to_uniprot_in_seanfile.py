@@ -9,18 +9,15 @@ sean_file = open(path_to_data, 'rU')
 # split creates a list out of the line [<first>, <second>] field
 # [0] is gene name, [1] is IPI
 sean_list = []
-lines_consumed = 0
+
 for line in sean_file:
-    lines_consumed += 1
-    if lines_consumed % 10000 == 0:
-        print("up to line:", lines_consumed, "out of 1600000")
     stripped_line = line.rstrip()   # remove the newline from the line, it has one by default
-    sean_split = stripped_line.split('\t') #feilds are tab seperated
+    sean_split = stripped_line.split('\t') #fields are tab seperated
     sean_list.append(sean_split)
 
 #converted 'sean_ipis' to uniprot accession using DAVID:
 #'http://david.abcc.ncifcrf.gov/conversion.jsp'
-#saved the conversion list as 'sean_uniprot_list.txt'
+# saved the conversion list as 'sean_conversion_list.txt'
 path_to_conversion_david = 'data/sean_conversion_list.txt'
 conversion_david= open(path_to_conversion_david)
 
@@ -50,5 +47,6 @@ for item in sean_list:
         item_to_write = '\t'.join(item) + '\n'    #unsplits the list so that the file output will look like: <gene_name>/t<uniprot>/t<some_other_data>/t ... <lots of numbers> instead of a list with [] as above.  
         sean_list_converted.write(item_to_write)
     else:
-        print('could not convert', sean_ipi)
+        print(sean_ipi) #this gives the ipis that were not assigned to uniprot accession in first run through DAVID.
+        # copied and pasted these missing values into new file 'unconverted_ipis.txt'
 sean_list_converted.close() #must close file after writing  
