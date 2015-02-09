@@ -34,20 +34,20 @@ for line in conversion_david:
 # [<gene_name>, <ipi>, <some_other_data>, ... <lots of numbers>]
 # replace IPIs in Sean_list with matching uniprot from conversion_list so it will look like:
 # [<gene_name>, <uniprot>, <some_other_data>, ... <lots of numbers>]
-path_to_sean_list_converted = 'data/sean_list_converted.txt'
-sean_list_converted = open(path_to_sean_list_converted, 'w') # w makes it ready to write the file
+path_to_sean_list_converted_set = 'data/sean_list_converted_set.txt'
+sean_list_converted_set = open(path_to_sean_list_converted_set, 'w') # w makes it ready to write the file
 
 for item in sean_list:
     sean_ipi = item[1]
     # If the IPI has a conversion to a uniprot, convert it
     if sean_ipi in conversion_dict:
-        uniprot = conversion_dict[sean_ipi] #convert ipi to uniprot
-        item[1] = uniprot
-        item_to_write = '\t'.join(item) + '\n'    #unsplits the list so that the file output will look like: <gene_name>/t<uniprot>/t<some_other_data>/t ... <lots of numbers> instead of a list with [] as above.  
-        sean_list_converted.write(item_to_write)
+        uniprot = conversion_dict[sean_ipi] #define what to convert
+        item[1] = uniprot   #convert ipi to uniprot
+        item_to_write = set('\t'.join(item) + '\n')    #unsplits the list so that the file output will look like: <gene_name>/t<uniprot>/t<some_other_data>/t ... <lots of numbers> instead of a list with [] as above.  
+        sean_list_converted_set.write(item_to_write)
     else:
         print(sean_ipi) #this gives the ipis that were not assigned to uniprot accession in first run through DAVID.
-sean_list_converted.close() #must close file after writing
+sean_list_converted_set.close() #must close file after writing
 
 
 
