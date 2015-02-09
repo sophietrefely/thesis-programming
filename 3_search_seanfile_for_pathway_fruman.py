@@ -23,10 +23,13 @@ fruman_data = open(path_to_fruman_data, 'w')
 
 # Each item looks like ['37165', 'Q9WTZ4', 'SGGTSSSPIKAIF', ..., <lots of numbers>]
 for item in sean_converted_list:
-    sean_uniprot = item[1]
+    sean_uniprots = item[1]
+    sean_uniprot_split = sean_uniprots.split(' ') #split the multiple space separated uniprots into seperate elements
+    for element in sean_uniprot_split:
+        uniprot = element
     #if uniprot is in the KEGG fructose mannose list print all data relating to that protein in sean_list to file
-    if sean_uniprot in fruman_uniprots: #this is a set not a list so can find multiple entries not th efirst only
-        item_for_write = '\t'.join(item) + '\n' #join is the opposite of split. split by tab before therefore must join by tab and can then add newline as string because it is no longer a set/list
-        fruman_data.write(item_for_write)
+        if uniprot in fruman_uniprots: #this is a set not a list so can find multiple entries not th efirst only
+            item_for_write = '\t'.join(item) + '\n' #join is the opposite of split. split by tab before therefore must join by tab and can then add newline as string because it is no longer a set/list
+            fruman_data.write(item_for_write)
 fruman_data.close()
 print('finish')
