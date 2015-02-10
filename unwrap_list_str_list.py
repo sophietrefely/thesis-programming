@@ -11,5 +11,5 @@ list1 = [['orange',"['horse', 'cat', 'dog']", 'pear'], ['lemon', "['cow', 'sheep
 for element in list1:
     animals = eval(element[1])
     for animal in animals:
-        print(str(animal))
+        print(animal)
     

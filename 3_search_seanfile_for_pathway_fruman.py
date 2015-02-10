@@ -19,7 +19,7 @@ fruman_uniprots_file = open(path_to_fruman_uniprots, 'rU')
 fruman_uniprots = fruman_uniprots_file.read().strip().split('\n')
 print(fruman_uniprots)
 
-## Export all fruman gene data into a new txt file ('glyoclysis_data.txt'):
+## Export all fruman gene data into a new txt file ('fruman_data.txt'):
 path_to_fruman_data = 'data/fruman_data.txt'
 fruman_data = open(path_to_fruman_data, 'w')
 
