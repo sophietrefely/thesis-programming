@@ -34,3 +34,17 @@ for item in sean_converted_list:
             fruman_data.write(item_for_write)
 fruman_data.close()
 print('finish')
+
+# elimante duplicates - by making a set
+path_to_fruman_datanodupl = 'data/fruman_data_nodupl.txt'
+path_to_fruman_data = 'data/fruman_data.txt'
+
+lines_seen = set() # holds lines already seen
+outfile = open(path_to_fruman_datanodupl, "w")
+for line in open(path_to_fruman_data, "r"):
+    if line not in lines_seen: # not a duplicate
+        outfile.write(line)
+        lines_seen.add(line)
+outfile.close()
+
+    
