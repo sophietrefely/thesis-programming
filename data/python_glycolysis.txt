@@ -1,0 +1,82 @@
+Acss2	no change
+Acss2	no change
+Acss2	no change
+Acss2	no change
+Adh2	no change
+Ahd1	no change
+Ahd1	no change
+Ahd1	no change
+Akr1a1	postitive
+Aldo3	no change
+Aldo3	no change
+Aldoart2	no change
+Aldoart2	no change
+Aldoart2	no change
+Aldoart2	no change
+Aldoart2	no change
+Dlat	no change
+Dld	postitive
+Eno1	no change
+Eno1	no change
+Eno1	no change
+Eno1	postitive
+Eno1	postitive
+Eno1	postitive
+Eno1	no change
+Eno1	no change
+Gapd	no change
+Gapd	no change
+Gpi	no change
+Gpi	postitive
+Gpi	no change
+Gpi	postitive
+Hk2	no change
+Hk2	no change
+Hk2	postitive
+Ldh1	no change
+Ldh2	no change
+Ldh2	no change
+Pck2	no change
+Pdha1	no change
+Pdha1	no change
+Pdha1	no change
+Pdha1	no change
+Pdha1	no change
+Pdha1	no change
+Pdha1	postitive
+Pdha2	postitive
+Pdha2	no change
+Pdha2	no change
+Pdha2	no change
+Pfka	no change
+Pfka	no change
+Pfkl	no change
+Pfkp	no change
+Pgam1	no change
+Pgam1	no change
+Pgam1	no change
+Pgam1	postitive
+Pgam2	no change
+Pgam2	postitive
+Pgam2	no change
+Pgam2	postitive
+Pgk1	no change
+Pgk1	no change
+Pgm2	no change
+Pgm2	no change
+Pgm2	no change
+Pgm2	no change
+Pgm2	no change
+Pgm2	no change
+Pgm2	no change
+Pgm2	no change
+Pk3	no change
+Pk3	no change
+Pk3	postitive
+Pk3	no change
+Tpi	no change
+Tpi	no change
+Tpi	no change
+Tpi	no change
+Tpi	postitive
+Tpi	no change
